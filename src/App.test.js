@@ -56,7 +56,7 @@ test('check initial state of button is enabled on checkbox is unchecked', () => 
 test('Check if button is disabled on checkbox check', () => {
   render(<App />);
   const btn = screen.getByRole('button', { name: 'Change to blue' });
-  const checkbox = screen.getByRole('checkbox');
+  const checkbox = screen.getByRole('checkbox', { name: 'Disable Button' });
 
   // 1st click
   fireEvent.click(checkbox);

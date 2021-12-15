@@ -29,11 +29,13 @@ function App() {
       </button>
       <div className='margin'>
         <input
+          id='disable-btn-checkbox'
           type='checkbox'
           onChange={() => {
             setCheckbox(prev => !prev);
           }}
         />
+        <label htmlFor='disable-btn-checkbox'>Disable Button</label>
       </div>
     </div>
   );
