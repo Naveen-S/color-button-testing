@@ -25,28 +25,28 @@ test('renders learn react link via accessibilty', () => {
   expect(linkElement).toBeInTheDocument();
 });
 
-// Test if initial color is red and button text is 'change to blue'
+// Test if initial color is MediumVioletRed and button text is 'change to MidnightBlue'
 test('button has correct initial state', () => {
   render(<App />);
-  const btn = screen.getByRole('button', { name: 'Change to blue' });
-  expect(btn).toHaveStyle({ backgroundColor: 'red' });
+  const btn = screen.getByRole('button', { name: 'Change to MidnightBlue' });
+  expect(btn).toHaveStyle({ backgroundColor: 'MediumVioletRed' });
 });
 
-// Test the button click and see if color changes to blue and text changes to red.
+// Test the button click and see if color changes to MidnightBlue and text changes to MediumVioletRed.
 test('button has correct state after click', () => {
   render(<App />);
-  const btn = screen.getByRole('button', { name: 'Change to blue' });
+  const btn = screen.getByRole('button', { name: 'Change to MidnightBlue' });
 
   // Click the button.
   fireEvent.click(btn);
 
-  expect(btn).toHaveStyle({ backgroundColor: 'blue' });
-  expect(btn.textContent).toBe('Change to red');
+  expect(btn).toHaveStyle({ backgroundColor: 'MidnightBlue' });
+  expect(btn.textContent).toBe('Change to MediumVioletRed');
 });
 
 test('check initial state of button is enabled on checkbox is unchecked', () => {
   render(<App />);
-  const btn = screen.getByRole('button', { name: 'Change to blue' });
+  const btn = screen.getByRole('button', { name: 'Change to MidnightBlue' });
   expect(btn).toBeEnabled();
   const checkbox = screen.getByRole('checkbox');
   expect(checkbox).not.toBeChecked();
@@ -55,7 +55,7 @@ test('check initial state of button is enabled on checkbox is unchecked', () => 
 // Test if button is disabled on checkbox check.
 test('Check if button is disabled on checkbox check', () => {
   render(<App />);
-  const btn = screen.getByRole('button', { name: 'Change to blue' });
+  const btn = screen.getByRole('button', { name: 'Change to MidnightBlue' });
   const checkbox = screen.getByRole('checkbox', { name: 'Disable Button' });
 
   // 1st click
@@ -67,10 +67,10 @@ test('Check if button is disabled on checkbox check', () => {
   expect(btn).toBeEnabled();
 });
 
-// Test if button turns gray and check box click and becomes red on uncheck.
+// Test if button turns gray and check box click and becomes MediumVioletRed on uncheck.
 test('check disabled state of the button', () => {
   render(<App />);
-  const btn = screen.getByRole('button', { name: 'Change to blue' });
+  const btn = screen.getByRole('button', { name: 'Change to MidnightBlue' });
   const checkbox = screen.getByRole('checkbox', { name: 'Disable Button' });
 
   // 1st Click
@@ -79,13 +79,13 @@ test('check disabled state of the button', () => {
 
   // 2nd click (uncheck)
   fireEvent.click(checkbox);
-  expect(btn).toHaveStyle({ backgroundColor: 'red' });
+  expect(btn).toHaveStyle({ backgroundColor: 'MediumVioletRed' });
 });
 
-// Test if button turns gray and check box click and becomes blue on uncheck.
+// Test if button turns gray and check box click and becomes MidnightBlue on uncheck.
 test('check disabled state of the button after button click', () => {
   render(<App />);
-  const btn = screen.getByRole('button', { name: 'Change to blue' });
+  const btn = screen.getByRole('button', { name: 'Change to MidnightBlue' });
   const checkbox = screen.getByRole('checkbox', { name: 'Disable Button' });
 
   // Button click
@@ -97,7 +97,7 @@ test('check disabled state of the button after button click', () => {
 
   // 2nd click (uncheck)
   fireEvent.click(checkbox);
-  expect(btn).toHaveStyle({ backgroundColor: 'blue' });
+  expect(btn).toHaveStyle({ backgroundColor: 'MidnightBlue' });
 });
 
 // Unit Testing

@@ -11,9 +11,9 @@ function App() {
   const cls = checkbox
     ? { backgroundColor: 'gray' }
     : color
-    ? { backgroundColor: 'red' }
-    : { backgroundColor: 'blue' };
-  const text = color ? 'Change to blue' : 'Change to red';
+    ? { backgroundColor: 'MediumVioletRed' }
+    : { backgroundColor: 'MidnightBlue' };
+  const text = color ? 'Change to MidnightBlue' : 'Change to MediumVioletRed';
   return (
     <div className='App'>
       <div className='margin'>
