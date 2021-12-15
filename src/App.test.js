@@ -43,3 +43,26 @@ test('button has correct state after click', () => {
   expect(btn).toHaveStyle({ backgroundColor: 'blue' });
   expect(btn.textContent).toBe('Change to red');
 });
+
+test('check initial state of button is enabled on checkbox is unchecked', () => {
+  render(<App />);
+  const btn = screen.getByRole('button', { name: 'Change to blue' });
+  expect(btn).toBeEnabled();
+  const checkbox = screen.getByRole('checkbox');
+  expect(checkbox).not.toBeChecked();
+});
+
+// Test if button is disabled on checkbox check.
+test('Check if button is disabled on checkbox check', () => {
+  render(<App />);
+  const btn = screen.getByRole('button', { name: 'Change to blue' });
+  const checkbox = screen.getByRole('checkbox');
+
+  // 1st click
+  fireEvent.click(checkbox);
+  expect(btn).not.toBeEnabled();
+
+  // 2nd Click
+  fireEvent.click(checkbox);
+  expect(btn).toBeEnabled();
+});
