@@ -1,10 +1,15 @@
 import './App.css';
 import React, { useState } from 'react';
+import cx from 'classnames';
 
 function App() {
   const [color, setColor] = useState(true);
   const [checkbox, setCheckbox] = useState(false);
-  const cls = color ? { backgroundColor: 'red' } : { backgroundColor: 'blue' };
+  const cls = checkbox
+    ? { backgroundColor: 'gray' }
+    : color
+    ? { backgroundColor: 'red' }
+    : { backgroundColor: 'blue' };
   const text = color ? 'Change to blue' : 'Change to red';
   return (
     <div className='App'>
@@ -19,7 +24,6 @@ function App() {
       </div>
 
       <button
-        className='btn'
         onClick={() => {
           setColor(prev => !prev);
         }}
