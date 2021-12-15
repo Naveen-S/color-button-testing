@@ -1,6 +1,9 @@
 import './App.css';
 import React, { useState } from 'react';
-import cx from 'classnames';
+
+export const replaceCamelWithSpaces = colorName => {
+  return colorName.split(/(?=[A-Z])/).join(' ');
+};
 
 function App() {
   const [color, setColor] = useState(true);
