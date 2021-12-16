@@ -41,7 +41,7 @@ test('button has correct state after click', () => {
   fireEvent.click(btn);
 
   expect(btn).toHaveStyle({ backgroundColor: 'MidnightBlue' });
-  expect(btn.textContent).toBe('Change to MediumVioletRed');
+  expect(btn).toHaveTextContent('Change to MediumVioletRed');
 });
 
 test('check initial state of button is enabled on checkbox is unchecked', () => {
@@ -60,7 +60,7 @@ test('Check if button is disabled on checkbox check', () => {
 
   // 1st click
   fireEvent.click(checkbox);
-  expect(btn).not.toBeEnabled();
+  expect(btn).toBeDisabled();
 
   // 2nd Click
   fireEvent.click(checkbox);
